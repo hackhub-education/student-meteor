@@ -21,5 +21,9 @@ Template.students.events({
     
     // only insert data from client in development
     Students.insert(student);
+  },
+  'click .deleteStudent'() {
+    const studentId = this._id;
+    Students.remove(studentId);
   }
 });
