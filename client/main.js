@@ -37,5 +37,8 @@ Template.students.events({
         alert(res.result)
       }
     });
+  },
+  'click #logout'() {
+    Meteor.logout();
   }
 });
