@@ -1,23 +1,25 @@
 
 <template name="students">
-  {{> addStudent}}
-  <table border="1">
-    <tr>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Email</th>
-      <th>Age</th>
-    </tr>
-    {{#each students}}
+  {{#if currentUser}}
+    {{> addStudent}}
+    <table border="1">
       <tr>
-        <td><a href="/student/{{_id}}">{{firstname}}</a></td>
-        <td>{{lastname}}</td>
-        <td>{{email}}</td>
-        <td>{{age}}</td>
-        <td><a href='#' class='deleteStudent'>Delete</a></td>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Age</th>
       </tr>
-    {{/each}}
-  </table>
+      {{#each students}}
+        <tr>
+          <td><a href="/student/{{_id}}">{{firstname}}</a></td>
+          <td>{{lastname}}</td>
+          <td>{{email}}</td>
+          <td>{{age}}</td>
+          <td><a href='#' class='deleteStudent'>Delete</a></td>
+        </tr>
+      {{/each}}
+    </table>
+  {{/if}}
 </template>
   
 <template name="addStudent">

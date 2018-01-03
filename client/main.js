@@ -4,7 +4,7 @@ Template.students.onCreated(function() {
 
 Template.students.helpers({
   students() {
-    return Students.find().fetch();
+    return Students.find({ userId: Meteor.userId() }).fetch();
   },
 });
 
@@ -13,6 +13,7 @@ Template.students.events({
     e.preventDefault();
     const target = e.target;
     const student = {
+      userId: Meteor.userId(),
       firstname: target.firstname.value,
       lastname: target.lastname.value,
       email: target.email.value,

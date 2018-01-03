@@ -1,6 +1,7 @@
 Students = new Mongo.Collection('students');
 
 Students.schema = new SimpleSchema({
+  userId: { type: String, regEx: SimpleSchema.RegEx.Id },
   firstname: { type: String },
   lastname: { type: String },
   email: { type: String },

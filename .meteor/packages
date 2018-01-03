@@ -21,3 +21,5 @@ aldeed:simple-schema
 aldeed:collection2
 autopublish
 iron:router
+accounts-ui
+accounts-password
