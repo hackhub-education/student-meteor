@@ -17,13 +17,24 @@ Template.students.events({
       lastname: target.lastname.value,
       email: target.email.value,
       age: target.firstname.value,
-    }
+    };
     
-    // only insert data from client in development
-    Students.insert(student);
+    Meteor.call('students.add', student, (err, res) => {
+      if(err){
+        alert(err);
+      } else {
+        alert(res.result)
+      }
+    });
   },
   'click .deleteStudent'() {
     const studentId = this._id;
-    Students.remove(studentId);
+    Meteor.call('students.remove', studentId, (err, res) => {
+      if(err){
+        alert(err);
+      } else {
+        alert(res.result)
+      }
+    });
   }
 });
