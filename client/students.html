@@ -1,0 +1,32 @@
+
+<template name="students">
+  {{> addStudent}}
+  <table border="1">
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Email</th>
+      <th>Age</th>
+    </tr>
+    {{#each students}}
+      <tr>
+        <td><a href="/student/{{_id}}">{{firstname}}</a></td>
+        <td>{{lastname}}</td>
+        <td>{{email}}</td>
+        <td>{{age}}</td>
+        <td><a href='#' class='deleteStudent'>Delete</a></td>
+      </tr>
+    {{/each}}
+  </table>
+</template>
+  
+<template name="addStudent">
+  <form>
+    <input name="firstname" placeholder="firstname" />
+    <input name="lastname" placeholder="lastname" />
+    <input name="email" placeholder="email" />
+    <input name="age" placeholder="age" />
+    <input type="submit" />
+  </form>
+  <br/>
+</template>
