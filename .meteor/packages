@@ -19,7 +19,6 @@ shell-server@0.3.0            # Server-side component of the `meteor shell` comm
 
 aldeed:simple-schema
 aldeed:collection2
-autopublish
 iron:router
 accounts-ui
 accounts-password

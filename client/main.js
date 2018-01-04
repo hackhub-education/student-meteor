@@ -1,5 +1,5 @@
 Template.students.onCreated(function() {
-
+  Meteor.subscribe('students.private');
 });
 
 Template.students.helpers({
