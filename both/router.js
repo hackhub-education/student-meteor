@@ -13,4 +13,12 @@ Router.route('/student/:_id', {
   data: function () {
     return Students.findOne({_id: this.params._id});
   },
+  onBeforeAction: function(){
+    const currentUser = Meteor.userId();
+    if(currentUser){
+      this.next();
+    } else {
+      Router.go('/')
+    }
+  }
 });
